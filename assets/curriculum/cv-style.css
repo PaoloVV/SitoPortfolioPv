@@ -75,9 +75,12 @@ h3{
 
 .img-box{
     width: 150px;
-    height: 150px;
     margin-bottom: 15px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+}
+.img-box img{
+    width: 100%;
+    border-radius: 10%;
 }
 
 .info{
@@ -176,6 +179,14 @@ h3{
     background: #e3e3e3;
     border: 3px solid #003147;
     color: #003147;
+ }
+
+ .autorizzazione{
+    color: #003147;
+ }
+
+ .autorizzazzione-div{
+    background: #2ecc71;
  }
 
 

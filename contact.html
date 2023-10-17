@@ -46,15 +46,21 @@
       <section class="form-section d-flex flex-column justify-content-center align-items-center">
         <div class="mb-5">
           <h2 class="text-center">Contatti</h2>
-          <h3 class="text-center">Mandami un messaggio!</h3>
+          <h3 class="text-center">Scrivimi!</h3>
+        </div>
+        <div class="text-center home-social">
+          <p><a href="mailto:viviani.dev@gmail.com" class="b-link" target="_blank"><i class='bx bxl-gmail'></i></a><a href="mailto:viviani.dev@gmail.com" target="_blank" class="contact-link">viviani.dev@gmail.com</a></p>
+          <p><a href="https://www.linkedin.com/in/paolo-viviani-aa1618278" class="b-link" target="_blank"><i class='bx bxl-linkedin'></i></a><a href="https://www.linkedin.com/in/paolo-viviani-aa1618278" target="_blank" class="contact-link">LinkedIn</a></p>
         </div>
         <div id="div-alert">
           <p id="p-alert"></p>
           <!-- <p class="alert-message-" id="alert-message-ok">MESSAGGIO INVIATO CORRETTAMENTE!</p>
           <p class="alert-message-no" id="alert-message-no">MESSAGGIO NON INVIATO. RIPROVARE</p> -->
         </div>
+        <h3>Oppure lasciami un messaggio...</h3>
         <form class="form-content">
             <div class="d-flex flex-column align-items-center">
+              <div id="success-message"></div>
               <div class="input-container mb-5 w-100">
                 <div class="d-flex flex-column mb-3">
                   <label for="nome" class="text-center"><em>Nome</em></label>
@@ -73,7 +79,6 @@
               </div>
               <button type="submit" class="submit-btn" onclick="sendMail()" disabled>INVIA</button>
               <div id="error-message"></div>
-              <div id="success-message"></div>
             </div>
           </form>
       </section>

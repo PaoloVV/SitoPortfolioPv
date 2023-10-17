@@ -72,10 +72,14 @@
         }
 
         .current{
-            color: #0ef;
+            color: midnightblue;
+            background: #0ef;
             border: 2px solid #0ef;
-            border-radius: 5%;
+            border-radius: 10%;
             box-shadow: 0 0 20px #0ef;
+        }
+        .current:hover{
+            color: #e3e3e3;
         }
 
         .hidden-menu{
@@ -100,7 +104,7 @@
             font-size: 20px;
         }
 
-        .home-social a{
+        .b-link{
             display: inline-flex;
             justify-content: center;
             align-items: center;
@@ -115,7 +119,7 @@
             margin: 30px 15px 30px 0;
             /* box-shadow: */
         }
-        .home-social a:hover{
+        .b-link:hover{
             background: #0ef;
             color: #081b29;
             box-shadow: 0 0 20px #0ef;
@@ -302,6 +306,20 @@
         }
         #success-message{
             color: lawngreen;
+        }
+
+        .contact-link{
+            border: 2px solid  #e3e3e3;
+            color: #e3e3e3;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .contact-link:hover{
+            box-shadow: 0 0 20px #e3e3e3;
+            background: #e3e3e3;
+            color: midnightblue;
         }
         /* .form-container{
             display: flex;

@@ -14,7 +14,7 @@ function attivaSubmit(){
     if(params.nome !== "" && params.email !== "" && params.messaggio !== ""){
         submitBtn.disabled = false
         console.log("button ok")
-        successMessage.innerHTML = "Ok!"
+        successMessage.innerHTML = "Messaggio inviato correttamente!"
         errorMessage.innerHTML = ""
     } else {
         submitBtn.disabled = true
