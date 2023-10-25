@@ -1,46 +1,49 @@
 let header = document.getElementById("navbar")
 const submitBtn = document.querySelector(".submit-btn")
+const divAlert = document.querySelector(".div-alert")
+const okMessage = document.querySelector("#alert-message-green")
+const errorMessage = document.querySelector("#alert-message-red")
 
+const formContent = document.querySelector(".form-content")
+const nameInput = document.querySelector("#nome")
+const emailInput = document.querySelector("#email")
+const messageInput = document.querySelector("#messaggio")
 
-function attivaSubmit(){
-    let params = {
-        nome: document.getElementById("nome").value,
-        email: document.getElementById("email").value,
-        messaggio: document.getElementById("messaggio").value
+const publicKey = "Y-dX644jg-89EPDiD"
+const serviceId = "service_portfolio"
+const templateId = "template_pggsa0f"
+
+emailjs.init(publicKey);
+
+formContent.addEventListener("submit", e =>{
+    e.preventDefault();
+    submitBtn.innerText = "Attendi...";
+    const params = {
+        nome: nameInput.value,
+        email: emailInput.value,
+        messaggio: messageInput.value
     }
-    const errorMessage = document.getElementById("error-message")
-    const successMessage = document.getElementById("success-message")
 
-    if(params.nome !== "" && params.email !== "" && params.messaggio !== ""){
-        submitBtn.disabled = false
-        console.log("button ok")
-        successMessage.innerHTML = "Messaggio inviato correttamente!"
-        errorMessage.innerHTML = ""
-    } else {
-        submitBtn.disabled = true
-        console.log("button disabled")
-        successMessage.innerHTML = ""
-        errorMessage.innerHTML = "Compila tutti i campi"
-        }
+    emailjs.send(serviceId, templateId, params)
+    .then(() =>{
+        divAlert.style.display = "flex"
+        okMessage.innerText = "Messaggio Inviato Con Successo";
+        submitBtn.innerText = "INVIA"
+        nameInput.value = "";
+        emailInput.value = "";
+        messageInput.value = "";
+    }, (error) => {
+        console.log(error)
+        submitBtn.innerText = "Qualcosa è Andato Storto... Riprova"
+    });
+})
+
+function resetDiv(){
+    divAlert.style.display = "none";
+    okMessage.innerText = "";
+    errorMessage.innerText = ""
 }
 
-
-function sendMail(){
-    let params = {
-        nome: document.getElementById("nome").value,
-        email: document.getElementById("email").value,
-        messaggio: document.getElementById("messaggio").value
-    }
-
-    const serviceId = "service_portfolio"
-    const templateId = "template_pggsa0f"
-    
-    emailjs.send(serviceId, templateId, params)
-        .then(function (res){
-            console.log("messaggio inviato")
-        })
-        .catch(error => alert("compilare tutti i campi"))
-    }
 
 
     window.onscroll = function(){
